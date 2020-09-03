@@ -10,32 +10,44 @@ let menuItems = [
 ];
 
 
-
 function menuMaker(array) {
+
+const header = document.querySelector('.header')
+
+const menuButton = document.querySelector('.menu-button');
+  
 
 const menu = document.createElement('div')
 menu.classList.add('menu')
 
 const ulContainer = document.createElement('ul')
+ulContainer.classList.add('menu-button')
 
 const menu1 = document.createElement('li')
+menu1.classList.add('Students')
 menu1.textContent = array[0]
 
 const menu2 = document.createElement('li')
+menu2.classList.add('Faculty')
 menu2.textContent = array[1]
 
 const menu3 = document.createElement('li')
+menu3.classList.add('WhatsNew')
 menu3.textContent = array[2]
 
 const menu4 = document.createElement('li')
+menu4.classList.add('TechTrends')
 menu4.textContent = array[3]
 
 const menu5 = document.createElement('li')
+menu5.classList.add('Music')
 menu5.textContent = array[4]
 
 const menu6 = document.createElement('li')
+menu6.classList.add('LogOut')
 menu6.textContent = array[5]
 
+header.append(menu)
 menu.appendChild(ulContainer)
 ulContainer.appendChild(menu1)
 ulContainer.appendChild(menu2)
@@ -44,13 +56,16 @@ ulContainer.appendChild(menu4)
 ulContainer.appendChild(menu5)
 ulContainer.appendChild(menu6)
 
+menuButton.addEventListener('click', function(){
+menu.classList.toggle('menu--open')
+  })
+
+
 return menu
 
 }
 
-console.log(menuMaker(menuItems))
-
-const mainMenu = document.querySelector('.menu-button')
+console.log (menuMaker(menuItems))
 
 
 // menuItems.forEach(dataThing => {
